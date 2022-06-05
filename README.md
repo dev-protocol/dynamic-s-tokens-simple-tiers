@@ -1,4 +1,4 @@
-# template-repos-ts-sol
+# dynamic-s-tokens-simple-tiers
 
 # Installation
 

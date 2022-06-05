@@ -1,6 +1,7 @@
 {
-	"name": "template-repos-ts-sol",
+	"name": "dynamic-s-tokens-simple-tiers",
 	"version": "1.0.0",
+	"private": true,
 	"description": "Template repository for using TypeScript and Solidity",
 	"main": "index.js",
 	"scripts": {
@@ -17,7 +18,7 @@
 		"clean": "del 'artifacts' 'typechain-types'",
 		"prepare": "husky install"
 	},
-	"author": "",
+	"author": "aggre",
 	"license": "MPL-2.0",
 	"devDependencies": {
 		"@nomiclabs/hardhat-ethers": "2.0.6",
@@ -54,5 +55,16 @@
 		"@typechain/hardhat": "^6.0.0",
 		"solhint": "^3.3.2",
 		"typechain": "^8.0.0"
-	}
+	},
+	"directories": {
+		"test": "test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dev-protocol/dynamic-s-tokens-simple-tiers.git"
+	},
+	"bugs": {
+		"url": "https://github.com/dev-protocol/dynamic-s-tokens-simple-tiers/issues"
+	},
+	"homepage": "https://github.com/dev-protocol/dynamic-s-tokens-simple-tiers#readme"
 }
