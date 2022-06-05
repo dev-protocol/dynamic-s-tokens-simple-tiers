@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 import { expect, use } from 'chai'
 import { BigNumber, constants, utils } from 'ethers'
 import { solidity } from 'ethereum-waffle'
