@@ -50,11 +50,11 @@
 	},
 	"dependencies": {
 		"@devprotocol/i-s-tokens": "1.8.0",
-		"@openzeppelin/contracts-upgradeable": "^4.4.2",
-		"@typechain/ethers-v5": "^10.0.0",
-		"@typechain/hardhat": "^6.0.0",
-		"solhint": "^3.3.2",
-		"typechain": "^8.0.0"
+		"@openzeppelin/contracts-upgradeable": "4.4.2",
+		"@typechain/ethers-v5": "10.0.0",
+		"@typechain/hardhat": "6.0.0",
+		"solhint": "3.3.6",
+		"typechain": "8.0.0"
 	},
 	"directories": {
 		"test": "test"
