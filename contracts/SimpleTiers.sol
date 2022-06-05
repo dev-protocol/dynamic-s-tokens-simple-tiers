@@ -7,7 +7,7 @@ import "@devprotocol/i-s-tokens/contracts/interface/ISTokensManagerStruct.sol";
 import "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Badges is ITokenURIDescriptor, Ownable {
+contract SimpleTiers is ITokenURIDescriptor, Ownable {
 	EnumerableSet.UintSet private tiers;
 	mapping(uint256 => string) public images;
 
