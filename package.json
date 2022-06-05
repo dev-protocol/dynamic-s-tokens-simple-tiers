@@ -14,7 +14,7 @@
 		"lint:format": "prettier --write '**/*.{sol,ts,json,md,yml}'",
 		"build": "tsc -p tsconfig.build.json",
 		"prebuild": "yarn generate",
-		"clean": "del 'artifacts'",
+		"clean": "del 'artifacts' 'typechain-types'",
 		"prepare": "husky install"
 	},
 	"author": "",
@@ -48,6 +48,7 @@
 		"typescript": "4.7.3"
 	},
 	"dependencies": {
+		"@devprotocol/i-s-tokens": "1.8.0",
 		"@openzeppelin/contracts-upgradeable": "^4.4.2",
 		"@typechain/ethers-v5": "^10.0.0",
 		"@typechain/hardhat": "^6.0.0",
