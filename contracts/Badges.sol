@@ -31,6 +31,9 @@ contract Badges is ITokenURIDescriptor, Ownable {
 	}
 
 	function setTier(uint256 _tier, string memory _image) external onlyOwner {
+		if (tiers.contains(_tier)) {
+			tiers.remove(_tier);
+		}
 		tiers.add(_tier);
 		images[_tier] = _image;
 	}

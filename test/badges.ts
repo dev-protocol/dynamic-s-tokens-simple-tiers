@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 import { expect, use } from 'chai'
 import { BigNumber, constants, utils } from 'ethers'
 import { solidity } from 'ethereum-waffle'
@@ -8,7 +9,6 @@ import { ethers } from 'hardhat'
 use(solidity)
 
 const getImage = async (amount: BigNumber, badges: Badges): Promise<string> =>
-	// eslint-disable-next-line @typescript-eslint/no-unsafe-return
 	badges.image(
 		constants.Zero,
 		constants.AddressZero,
@@ -55,6 +55,20 @@ describe('Badges', () => {
 			const badges = await deploy<Badges>('Badges')
 
 			expect(await getImage(AMOUNT, badges)).to.equal('')
+
+			await badges.setTier(AMOUNT, 'XYZ')
+
+			const image = await getImage(AMOUNT, badges)
+
+			expect(image).to.equal('XYZ')
+		})
+
+		it('replace the existing tier when the passed tier is existing value', async () => {
+			const AMOUNT = utils.parseUnits('100')
+			const badges = await deploy<Badges>('Badges')
+			await badges.setTier(AMOUNT, 'ABC')
+
+			expect(await getImage(AMOUNT, badges)).to.equal('ABC')
 
 			await badges.setTier(AMOUNT, 'XYZ')
 
