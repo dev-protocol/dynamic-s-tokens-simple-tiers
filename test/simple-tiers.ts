@@ -25,7 +25,8 @@ const getImage = async (
 			entireReward: constants.Zero,
 			cumulativeReward: constants.Zero,
 			withdrawableReward: constants.Zero,
-		}
+		},
+		constants.HashZero
 	)
 
 describe('SimpleTiers', () => {

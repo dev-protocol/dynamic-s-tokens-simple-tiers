@@ -30,10 +30,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@devprotocol/i-s-tokens@1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@devprotocol/i-s-tokens/-/i-s-tokens-1.8.0.tgz#cdad0c794c235b1091e668e6810cf6919d67318c"
-  integrity sha512-W5uL5DTM8bvseX0Pfm1iFMT4e/0e11cmGnM6QW9tppirgHJBnsvT44wK62v+Q7FRxmupk8KAQQbQV3Ob967Kug==
+"@devprotocol/i-s-tokens@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@devprotocol/i-s-tokens/-/i-s-tokens-2.0.1.tgz#3e28db131ef0cee9abd1a9ea685ac12268d50008"
+  integrity sha512-QXSeiydzKe2D3RdXgR9ViA/ymEQedQbiAX9vLR+XrUjwB8TtJXp4ssJr/AChgd+Kw6Kz4uva/E44TIR+FGDgvA==
 
 "@ensdomains/ens@^0.4.4":
   version "0.4.5"

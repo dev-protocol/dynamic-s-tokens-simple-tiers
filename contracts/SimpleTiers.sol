@@ -17,7 +17,8 @@ contract SimpleTiers is ITokenURIDescriptor, Ownable {
 		uint256,
 		address,
 		ISTokensManagerStruct.StakingPositions memory _positions,
-		ISTokensManagerStruct.Rewards memory
+		ISTokensManagerStruct.Rewards memory,
+		bytes32
 	) external view returns (string memory) {
 		uint256 amount = _positions.amount;
 		uint256 pt;
@@ -41,5 +42,14 @@ contract SimpleTiers is ITokenURIDescriptor, Ownable {
 	function removeTier(uint256 _tier) external onlyOwner {
 		tiers.remove(_tier);
 		delete images[_tier];
+	}
+
+	function onBeforeMint(
+		uint256,
+		address,
+		ISTokensManagerStruct.StakingPositions memory,
+		bytes32
+	) external pure returns (bool) {
+		return true;
 	}
 }
