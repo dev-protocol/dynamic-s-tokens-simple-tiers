@@ -2,8 +2,8 @@
 // solhint-disable-next-line compiler-version
 pragma solidity ^0.8.9;
 
-import "@devprotocol/i-s-tokens/contracts/interface/ITokenURIDescriptor.sol";
-import "@devprotocol/i-s-tokens/contracts/interface/ISTokensManagerStruct.sol";
+import "@devprotocol/i-s-tokens/contracts/interfaces/ITokenURIDescriptor.sol";
+import "@devprotocol/i-s-tokens/contracts/interfaces/ISTokensManagerStruct.sol";
 import "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
@@ -51,5 +51,25 @@ contract SimpleTiers is ITokenURIDescriptor, Ownable {
 		bytes32
 	) external pure returns (bool) {
 		return true;
+	}
+
+	function name(
+		uint256,
+		address,
+		ISTokensManagerStruct.StakingPositions memory,
+		ISTokensManagerStruct.Rewards memory,
+		bytes32
+	) external pure returns (string memory) {
+		return "";
+	}
+
+	function description(
+		uint256,
+		address,
+		ISTokensManagerStruct.StakingPositions memory,
+		ISTokensManagerStruct.Rewards memory,
+		bytes32
+	) external pure returns (string memory) {
+		return "";
 	}
 }
