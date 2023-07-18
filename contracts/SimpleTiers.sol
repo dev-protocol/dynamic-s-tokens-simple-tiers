@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract SimpleTiers is ITokenURIDescriptor, Ownable {
 	EnumerableSet.UintSet private tiers;
-	mapping(uint256 => string) public images;
+	mapping(uint256 => mapping(bytes32 => string)) public images;
 
 	using EnumerableSet for EnumerableSet.UintSet;
 
@@ -18,7 +18,7 @@ contract SimpleTiers is ITokenURIDescriptor, Ownable {
 		address,
 		ISTokensManagerStruct.StakingPositions memory _positions,
 		ISTokensManagerStruct.Rewards memory,
-		bytes32
+		bytes32 _payload
 	) external view returns (string memory) {
 		uint256 amount = _positions.amount;
 		uint256 pt;
@@ -28,20 +28,24 @@ contract SimpleTiers is ITokenURIDescriptor, Ownable {
 				pt = tier;
 			}
 		}
-		return images[pt];
+		return images[pt][_payload];
 	}
 
-	function setTier(uint256 _tier, string memory _image) external onlyOwner {
+	function setTier(
+		uint256 _tier,
+		bytes32 _payload,
+		string memory _image
+	) external onlyOwner {
 		if (tiers.contains(_tier)) {
 			tiers.remove(_tier);
 		}
 		tiers.add(_tier);
-		images[_tier] = _image;
+		images[_tier][_payload] = _image;
 	}
 
-	function removeTier(uint256 _tier) external onlyOwner {
+	function removeTier(uint256 _tier, bytes32 _payload) external onlyOwner {
 		tiers.remove(_tier);
-		delete images[_tier];
+		delete images[_tier][_payload];
 	}
 
 	function onBeforeMint(
