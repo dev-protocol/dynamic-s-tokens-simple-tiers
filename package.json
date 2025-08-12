@@ -21,7 +21,7 @@
 	"author": "aggre",
 	"license": "MPL-2.0",
 	"devDependencies": {
-		"@nomiclabs/hardhat-ethers": "2.1.1",
+		"@nomiclabs/hardhat-ethers": "2.2.3",
 		"@nomiclabs/hardhat-etherscan": "3.0.4",
 		"@nomiclabs/hardhat-waffle": "2.0.6",
 		"@openzeppelin/contracts": "4.9.6",
